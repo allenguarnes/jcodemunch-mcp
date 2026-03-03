@@ -224,7 +224,7 @@ Recursive directory walk with the full security pipeline.
 
 ## Response Envelope
 
-All tools return a `_meta` object with timing and context:
+All tools return a `_meta` object with timing, context, and token savings:
 
 ```json
 {
@@ -233,10 +233,17 @@ All tools return a `_meta` object with timing and context:
     "repo": "owner/repo",
     "symbol_count": 387,
     "truncated": false,
-    "content_verified": true
+    "content_verified": true,
+    "tokens_saved": 2450,
+    "total_tokens_saved": 184320
   }
 }
 ```
+
+- **`tokens_saved`**: Tokens saved by this specific call (raw file bytes vs response bytes, divided by 4)
+- **`total_tokens_saved`**: Cumulative tokens saved across all tool calls, persisted to `~/.code-index/_savings.json`
+
+Present on: `get_file_outline`, `get_symbol`, `get_symbols`, `get_repo_outline`, `search_symbols`.
 
 ---
 

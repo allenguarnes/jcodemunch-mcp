@@ -25,7 +25,8 @@ jcodemunch-mcp/
 │   │
 │   ├── storage/
 │   │   ├── __init__.py
-│   │   └── index_store.py           # CodeIndex, IndexStore: save/load, incremental indexing
+│   │   ├── index_store.py           # CodeIndex, IndexStore: save/load, incremental indexing
+│   │   └── token_tracker.py         # Persistent token savings counter (~/.code-index/_savings.json)
 │   │
 │   ├── summarizer/
 │   │   ├── __init__.py
@@ -175,10 +176,14 @@ All tool responses include metadata:
     "timing_ms": 42,
     "repo": "owner/repo",
     "symbol_count": 387,
-    "truncated": false
+    "truncated": false,
+    "tokens_saved": 2450,
+    "total_tokens_saved": 184320
   }
 }
 ```
+
+`tokens_saved` and `total_tokens_saved` are included on all retrieval and search tools. The running total is persisted to `~/.code-index/_savings.json` across sessions.
 
 ---
 
