@@ -39,7 +39,9 @@ Add to your `claude_desktop_config.json`:
 Both environment variables are optional:
 
 * `GITHUB_TOKEN` enables private repositories and higher GitHub API rate limits.
-* `ANTHROPIC_API_KEY` enables AI-generated summaries (otherwise docstrings or signatures are used).
+* `ANTHROPIC_API_KEY` enables AI-generated summaries via Claude Haiku.
+* `GOOGLE_API_KEY` enables AI-generated summaries via Gemini Flash (used if `ANTHROPIC_API_KEY` is not set).
+* If neither key is set, summaries fall back to docstrings or signatures.
 
 ### VS Code
 
@@ -199,7 +201,7 @@ The repository may not contain supported language files (`.py`, `.js`, `.ts`, `.
 Set `GITHUB_TOKEN` to increase GitHub API limits (5,000 requests/hour vs 60 unauthenticated).
 
 **AI summaries not working**
-Set `ANTHROPIC_API_KEY`. Without it, summaries fall back to docstrings or signatures.
+Set `ANTHROPIC_API_KEY` (Claude Haiku) or `GOOGLE_API_KEY` (Gemini Flash). Anthropic takes priority if both are set. Without either, summaries fall back to docstrings or signatures.
 
 **Stale index**
 Use `invalidate_cache` followed by `index_repo` or `index_folder` to force a clean re-index.

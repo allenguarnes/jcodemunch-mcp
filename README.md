@@ -175,7 +175,8 @@ Environment variables are optional:
 | Variable            | Purpose                                      |
 | ------------------- | -------------------------------------------- |
 | `GITHUB_TOKEN`      | Higher GitHub API limits / private access    |
-| `ANTHROPIC_API_KEY` | AI-generated symbol summaries                |
+| `ANTHROPIC_API_KEY` | AI-generated summaries via Claude Haiku (takes priority) |
+| `GOOGLE_API_KEY`    | AI-generated summaries via Gemini Flash      |
 
 ---
 
@@ -269,7 +270,8 @@ See SECURITY.md for details.
 | Variable            | Purpose                   | Required |
 | ------------------- | ------------------------- | -------- |
 | `GITHUB_TOKEN`      | GitHub API auth           | No       |
-| `ANTHROPIC_API_KEY` | Symbol summary generation | No       |
+| `ANTHROPIC_API_KEY` | Symbol summaries via Claude Haiku (takes priority) | No       |
+| `GOOGLE_API_KEY`    | Symbol summaries via Gemini Flash | No       |
 | `CODE_INDEX_PATH`   | Custom cache path         | No       |
 
 ---

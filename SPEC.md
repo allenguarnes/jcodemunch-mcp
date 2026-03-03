@@ -270,5 +270,6 @@ All errors return:
 | Variable            | Purpose                                                  | Required |
 | ------------------- | -------------------------------------------------------- | -------- |
 | `GITHUB_TOKEN`      | GitHub API authentication (higher limits, private repos) | No       |
-| `ANTHROPIC_API_KEY` | AI summarization via Claude Haiku                        | No       |
+| `ANTHROPIC_API_KEY` | AI summarization via Claude Haiku (takes priority if both keys set) | No       |
+| `GOOGLE_API_KEY`    | AI summarization via Gemini Flash (used if `ANTHROPIC_API_KEY` not set) | No       |
 | `CODE_INDEX_PATH`   | Custom storage path (default: `~/.code-index/`)          | No       |

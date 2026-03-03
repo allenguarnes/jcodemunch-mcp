@@ -205,6 +205,7 @@ Filters (kind, language, file_pattern) are applied before scoring. Results scori
 | ---------------------------------- | ----------------------------- |
 | `mcp>=1.0.0`                       | MCP server framework          |
 | `httpx>=0.27.0`                    | Async HTTP for GitHub API     |
-| `anthropic>=0.40.0`                | Optional AI summarization     |
+| `anthropic>=0.40.0`                | AI summarization via Claude Haiku (default) |
+| `google-generativeai>=0.8.0`       | AI summarization via Gemini Flash (optional, `pip install jcodemunch-mcp[gemini]`) |
 | `tree-sitter-language-pack>=0.7.0` | Precompiled grammars          |
 | `pathspec>=0.12.0`                 | `.gitignore` pattern matching |
